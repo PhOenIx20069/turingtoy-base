@@ -1,0 +1,84 @@
+{
+  "machine": {
+    "blank": "0",
+    "start state": "e1",
+    "final states": [
+      "done"
+    ],
+    "table": {
+      "e1": {
+        "0": {
+          "L": "done"
+        },
+        "1": {
+          "write": "0",
+          "R": "e8"
+        }
+      },
+      "e2": {
+        "1": {
+          "write": "1",
+          "R": "e2"
+        },
+        "0": {
+          "write": "0",
+          "R": "e3"
+        }
+      },
+      "e3": {
+        "1": {
+          "write": "1",
+          "R": "e3"
+        },
+        "0": {
+          "write": "1",
+          "L": "e4"
+        }
+      },
+      "e4": {
+        "1": {
+          "write": "1",
+          "L": "e4"
+        },
+        "0": {
+          "write": "0",
+          "L": "e5"
+        }
+      },
+      "e5": {
+        "1": {
+          "write": "1",
+          "L": "e5"
+        },
+        "0": {
+          "write": "1",
+          "R": "e1"
+        }
+      }
+    }
+  },
+  "input": "111",
+  "output": "Invalid state: e8",
+  "execution_history": [
+    {
+      "state": "e1",
+      "reading": "1",
+      "position": 0,
+      "memory": "111",
+      "transition": {
+        "write": "0",
+        "R": "e8"
+      }
+    },
+    {
+      "state": "e1",
+      "reading": "1",
+      "position": 0,
+      "memory": "111",
+      "transition": {
+        "write": "0",
+        "R": "e8"
+      }
+    }
+  ]
+}

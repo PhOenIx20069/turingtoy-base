@@ -1,0 +1,105 @@
+{
+  "machine": {
+    "blank": "0",
+    "start state": "e1",
+    "final states": [
+      "done"
+    ],
+    "table": {
+      "e1": {
+        "0": {
+          "L": "done"
+        },
+        "1": {
+          "write": "0",
+          "R": "e2"
+        }
+      },
+      "e2": {
+        "1": {
+          "write": "1",
+          "R": "e2"
+        },
+        "0": {
+          "write": "0",
+          "R": "e3"
+        }
+      },
+      "e3": {
+        "1": {
+          "write": "1",
+          "R": "e3"
+        },
+        "0": {
+          "write": "1",
+          "L": "e4"
+        }
+      },
+      "e4": {
+        "1": {
+          "write": "1",
+          "L": "e4"
+        },
+        "0": {
+          "write": "0",
+          "L": "e5"
+        }
+      },
+      "e5": {
+        "1": {
+          "write": "1",
+          "L": "e5"
+        },
+        "0": {
+          "write": "1",
+          "R": "e1"
+        }
+      },
+      "done": {}
+    }
+  },
+  "input": "1112",
+  "output": "Invalid symbol: `2` @(p:3)",
+  "execution_history": [
+    {
+      "state": "e1",
+      "reading": "1",
+      "position": 0,
+      "memory": "1112",
+      "transition": {
+        "write": "0",
+        "R": "e2"
+      }
+    },
+    {
+      "state": "e1",
+      "reading": "1",
+      "position": 0,
+      "memory": "1112",
+      "transition": {
+        "write": "0",
+        "R": "e2"
+      }
+    },
+    {
+      "state": "e2",
+      "reading": "1",
+      "position": 1,
+      "memory": "0112",
+      "transition": {
+        "write": "1",
+        "R": "e2"
+      }
+    },
+    {
+      "state": "e2",
+      "reading": "1",
+      "position": 2,
+      "memory": "0112",
+      "transition": {
+        "write": "1",
+        "R": "e2"
+      }
+    }
+  ]
+}
